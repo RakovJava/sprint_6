@@ -1,29 +1,15 @@
 import pageobject.MainPage;
 import pageobject.OrderPage;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.time.Duration;
 import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-public class OrderPageDownButtonTest {
-    private WebDriver driver;
-
-    @BeforeEach
-    void setUp() {
-        driver = new ChromeDriver();
-        driver.manage().window().maximize();
-        MainPage mainPage = new MainPage(driver);
-        mainPage.mainPageOpen();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
-    }
+public class OrderPageDownButtonTest extends BasicSettings {
 
     @ParameterizedTest
     @MethodSource("fillingData")
@@ -60,10 +46,4 @@ public class OrderPageDownButtonTest {
                 Arguments.of("Елизавета","Владимировна","ул.Шаболовка д.30 кв.112","Шаболовская","89517979434","20.06.2025","двое суток","grey","Нужно больше практиковаться")
         );
     }
-
-    @AfterEach
-    public void cleanUp() {
-        driver.quit();
-    }
-
 }
