@@ -1,5 +1,5 @@
-import PageObject.MainPage;
-import PageObject.OrderPage;
+import pageobject.MainPage;
+import pageobject.OrderPage;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.params.ParameterizedTest;
