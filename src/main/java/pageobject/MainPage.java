@@ -8,6 +8,9 @@ public class MainPage {
     // создание экземпляра WebDriver
     WebDriver driver;
 
+    //URL главной страницы
+    public static final String MAIN_PAGE_URL = "https://qa-scooter.praktikum-services.ru/";
+
     // Конструктор класса с драйвером
     public MainPage(WebDriver driver){
         this.driver = driver;
@@ -62,6 +65,11 @@ public class MainPage {
     private final By pathAnswer_7 = By.xpath(".//div[@id='accordion__panel-6']");
     // Ответ №8
     private final By pathAnswer_8 = By.xpath(".//div[@id='accordion__panel-7']");
+
+    //Открыть URL главной страницы
+    public void mainPageOpen () {
+        driver.get(MAIN_PAGE_URL);
+    }
 
     //Нажать кнопку заказа в хедере
     public void clickOrderButtonHeader() {

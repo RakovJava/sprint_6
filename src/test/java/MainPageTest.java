@@ -16,7 +16,8 @@ public class MainPageTest {
     void setUp() {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
-        driver.get("https://qa-scooter.praktikum-services.ru/");
+        MainPage mainPage = new MainPage(driver);
+        mainPage.mainPageOpen();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
     }
 
